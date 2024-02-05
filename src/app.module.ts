@@ -7,11 +7,13 @@ import { PassportModule } from '@nestjs/passport';
 import { AuthService } from './auth/auth.service';
 import { LocalStrategy } from './auth/local.strategy';
 import { SessionSerializer } from './auth/session.serializer';
+import { JwtModule } from '@nestjs/jwt';
 
 @Module({
   imports: [
     UsersModule, 
-    AuthModule, 
+    AuthModule,
+    JwtModule, 
     PassportModule.register({session:true})
   ],
   controllers: [
